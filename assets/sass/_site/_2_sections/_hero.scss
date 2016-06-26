@@ -1,0 +1,40 @@
+.hero {
+	padding: 0;
+
+	* {
+		color: white;
+	}
+
+	a {
+		color: $current_year-primary;
+	}
+
+	figure {
+		text-align: center;
+		margin: 16rem auto 2em auto;
+
+		img { max-width: 700px; display: inline-block; }
+	}
+
+	.mask {
+		position: relative;
+		@include dark_gradient();
+
+		.container {
+			z-index: 1;
+			padding: 6em 0;
+
+			& > .column {
+				margin-bottom: 0;
+			}
+		}
+
+		a {
+			color: $current_year-primary;
+		}
+
+		p {
+			line-hieight: 1.623809524;
+		}
+	}
+}

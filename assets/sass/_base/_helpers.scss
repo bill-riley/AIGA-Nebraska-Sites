@@ -1,0 +1,27 @@
+/*	-------------------------------------
+	:: Helpers
+	---------------------------------- */
+	// Vertical align
+	.display-table { display: table; position: relative }
+	.table-cell { display: table-cell }
+	.middle { vertical-align: middle }
+
+
+	// Text aligns
+	.text-left, .alignleft { text-align: left }
+	.text-center, .aligncenter { text-align: center }
+	.text-right, .alignright { text-align: right }
+
+
+	// Video
+	video::-webkit-media-controls {
+		display: none !important;
+	}
+
+	svg.symbols {
+		path, circle, rect, polygon {
+			fill: currentColor;
+		}
+	}
+
+	.sr { font-size: 0; line-height: 0; color: transparent; overflow: hidden; width: 0; height: 0; position: absolute; left: -100vw; top: -100vh; }

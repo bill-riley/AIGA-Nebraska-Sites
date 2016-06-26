@@ -1,0 +1,312 @@
+/*	-------------------------------------
+	:: Typography
+	---------------------------------- */
+
+	html {
+		font-family: $body-font;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+		font-size: 62.5%; // 10px
+
+		@include max-width(1200px) {
+			font-size: 59.375%;
+		}
+
+		@include max-width(1000px) {
+			font-size: 58.25%;
+		}
+
+		@include max-width(800px) {
+			font-size: 56.125%;
+		}
+
+		@include max-width(600px) {
+			font-size: 54%;
+		}
+
+		@include max-width(400px) {
+			font-size: 52.25%;
+		}
+
+		&.mac * {
+			text-rendering: optimizeLegibility;
+		}
+	}
+
+	// Headline Tags
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-weight: normal;
+		font-style: normal;
+		font-family: $heading-font;
+		letter-spacing: -0.04em;
+		margin: 0;
+		display: block;
+		line-height: 1.4;
+		color: $black;
+		margin-bottom: 2em;
+
+		&:last-of-type {
+			margin-bottom: 0;
+
+			& + p {
+				margin-top: 1em;
+			}
+		}
+
+		a {
+			color: inherit;
+			font-size: inherit;
+			font-family: inherit;
+		}
+	}
+
+	h1, .h1 { @include font-size(8.0); line-height: 1.19047619; font-weight: 900; letter-spacing: 0.02em; }
+	h2, .h2 { @include font-size(3.0); line-height: 1.333333333; font-weight: 900; letter-spacing: 0.02em; }
+	h3, .h3 { @include font-size(2.4); line-height: 1.333333333; font-weight: 900; letter-spacing: 0.02em; }
+	h4, .h4 { @include font-size(2.0); }
+	h5, .h5 { @include font-size(1.6); }
+	h6, .h6 { @include font-size(1.4); }
+
+	/* Helpful Typography Defaults */
+	em, i {
+		font-style: italic;
+		line-height: inherit;
+	}
+
+	strong, b {
+		font-weight: bold;
+		line-height: inherit;
+	}
+
+	sub, sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sup { top: -.5em; }
+	sub { bottom: -.25em; }
+
+
+	/* Paragraph */
+	p {
+		@include font-size(1.8);
+		font-family: $body-font;
+		line-height: 1.523809524;
+		font-weight: 400;
+		font-style: normal;
+		margin-top: 0;
+		margin-bottom: 20px;
+
+		&.lead {
+			@include font-size(2.4);
+			line-height: 1.6;
+		}
+	}
+
+	span {
+		@include font-size(1.8);
+		font-family: $body-font;
+		line-height: 1.523809524;
+		font-weight: 400;
+		font-style: normal;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+
+
+	/* Links */
+	a {
+		position: relative;
+		text-decoration: none;
+		color: $cta;
+		line-height: inherit;
+		transition: all 100ms $ease 0ms;
+		font-weight: 600;
+
+		&:hover,
+		&:active {
+			// text-decoration: underline;
+		}
+
+		&:focus  { outline: none; }
+
+		img { border: none; }
+	}
+
+	.muted {
+		color: $gray !important;
+	}
+
+
+
+	/* Images */
+	img {
+		vertical-align: top;
+		max-width: 100%;
+		height: auto;
+
+		&.scale { width: 100%; }
+	}
+
+	svg:not(:root) { overflow: hidden; }
+
+
+	/* Unsorted/Sorted Lists */
+	ul, ol {
+		margin: 2.4em 0 2.4em 2.4em;
+		padding: 0;
+		font-family: inherit;
+		counter-reset: item;
+		list-style: none;
+
+		&.unstyled {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li:before {
+				display: none !important;
+			}
+		}
+
+		&.inline > li {
+			display: inline-block;
+			padding-right: 5px;
+			padding-left: 5px;
+
+			&:first-of-type { padding-left: 0; }
+			&:last-of-type  { padding-right: 0; }
+		}
+
+		&.reset {
+			list-style-type: circle
+		}
+
+		li {
+			@include font-size(1.8);
+			line-height: 1.523809524;
+			font-weight: 400;
+			font-style: normal;
+			margin-top: 0;
+			margin-bottom: 0.4em;
+
+			&:before {
+				/* Color the counter however you want! */
+				color: black;
+				margin-right: 0.4em;
+			}
+		}
+	}
+
+	ul li:before {
+		/* Trail counter with period and a space */
+		content: " • ";
+		font-size: 120%;
+		position: relative;
+		margin-right: 0.4em;
+		top: 0em;
+		/* Increase one for every one new item */
+		counter-increment: item;
+	}
+
+	ol li:before {
+		/* Trail counter with period and a space */
+		content: counter(item) ". ";
+		margin-right: 0em;
+		font-weight: bold;
+		/* Increase one for every one new item */
+		counter-increment: item;
+	}
+
+
+
+	/* Quotes */
+	blockquote {
+		// Need Still
+	}
+	q { quotes: '\201C' '\201D' '\2018' '\2019'; }
+
+
+
+	/* Horizontal Rules */
+	hr {
+		height: 1px;
+		background: #808080;
+		border: none;
+	}
+
+
+	/* Subhead rules */
+	.subhead {
+		@include font-size(1.8);
+		line-height: 1.555555556;
+		font-family: $heading-font;
+	}
+
+	cite {
+		color: $gray;
+		font-size: 75%;
+		line-height: 0;
+		vertical-align: super;
+	}
+
+	/* notes rules */
+	.citation {
+		color: $gray;
+		@include font-size(1.5);
+		line-height: 1.4;
+		font-family: $heading-font;
+	}
+
+	hr {
+		@include font-size(1.8);
+		width: 50%;
+		display: block;
+		-moz-border-bottom-colors: none;
+		-moz-border-image: none;
+		-moz-border-left-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-top-colors: none;
+		border-color: #EEEEEE
+		-moz-use-text-color #FFFFFF;
+		border-style: $gray solid none;
+		border-width: 1px 0;
+		margin: 2em auto;
+	}
+
+	figure {
+		@include font-size(1.6);
+		margin: 3em 0 3em 0;
+		width: 100% !important;
+		transition: all 150ms $ease 0ms !important;
+		cursor: pointer;
+
+		&.expanded {
+			width: 150% !important;
+			margin-left: -50%;
+		}
+
+		img {
+			margin: 0 auto;
+		}
+
+		figcaption {
+			font-family: $heading-font !important;
+			@include font-size(1.7);
+			color: black;
+			font-style: italic;
+			margin: 2rem auto;
+
+			@include min-width(1201px) {
+				position: absolute;
+				width: 210px;
+				right: calc(50vw - 350px);
+				transform: translate(235px, -60px);
+				float: right;
+			}
+		}
+	}

@@ -1,0 +1,120 @@
+/*	-------------------------------------
+	:: Mixins
+	---------------------------------- */
+	@mixin unstyled() {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	@mixin inline() {
+		&  > li {
+			display: inline-block;
+			padding-right: 5px;
+			padding-left: 5px;
+
+			&:first-of-type { padding-left: 0; }
+			&:last-of-type  { padding-right: 0; }
+		}
+	}
+
+	@mixin outline() {
+		&, * {
+			outline: 1px solid black;
+		}
+	}
+
+/*	-------------------------------------
+	:: Media Query Mixins
+	---------------------------------- */
+	// Mobile First Query
+	// Example: @include min-width(600px) { Do the Stuff }
+	@mixin min-width($media) {
+		@media (min-width: $media) {
+			@content;
+		}
+	}
+
+	// Desktop First Query
+	// Example: @include min-width(600px) { Do the Stuff }
+	@mixin max-width($media) {
+		@media (max-width: $media) {
+			@content;
+		}
+	}
+
+/*	-------------------------------------
+	:: Firefox mixin
+	---------------------------------- */
+	@mixin firefox() {
+		@-moz-document url-prefix() {
+			@content;
+		}
+	}
+
+
+/*	-------------------------------------
+	:: Safari mixin
+	---------------------------------- */
+	@mixin safari() {
+		@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+			@content;
+		}
+	}
+
+/*	-------------------------------------
+	:: Font Sizing
+	---------------------------------- */
+	// Font Size Reset to 10px Base
+	@mixin font-size($sizeValue: 1.6) {
+		font-size: ($sizeValue * 10) + px;
+		font-size: $sizeValue + rem;
+	}
+
+	// Strip Values
+	@function strip-unit($num) {
+		@return $num / ($num * 0 + 1);
+	}
+
+
+	@mixin dark_gradient() {
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			background: rgba($current_year-primary, 0.55);
+			background: linear-gradient(45deg, rgba($current_year-secondary,0.55) 0%,rgba($current_year-primary,0.55) 100%);
+			-webkit-backdrop-filter: blur(4px);
+			transition: all .3s $ease 0s;
+		}
+	}
+
+	@mixin light_gradient() {
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			background-color: rgba($current_year-primary, 0.55);
+			background: linear-gradient(to bottom, rgba($current_year-primary,0.55) 0%,rgba($current_year-secondary,0.55) 100%);
+			-webkit-backdrop-filter: blur(4px);
+			//mix-blend-mode: multiply;
+			transition: all .3s $ease 0s;
+		}
+	}
+
+	@mixin hue-rotate() {
+		animation: hue-rotate 20s linear infinite;
+	}
+
+	@keyframes hue-rotate {
+		from {
+			filter: hue-rotate(0deg)
+		}
+		to {
+			filter: hue-rotate(360deg)
+		}
+	}
