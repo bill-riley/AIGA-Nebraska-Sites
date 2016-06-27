@@ -1,4 +1,6 @@
 'use strict';
+var our_proxy_url = "aiga-show.dev:8888";
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var del = require('del');
@@ -78,6 +80,14 @@ var handle_error = function (task) {
   };
 };
 
+function forEach(object, callback) {
+    for(var prop in object) {
+        if(object.hasOwnProperty(prop)) {
+            callback(prop, object[prop]);
+        }
+    }
+}
+
 // ### Write to rev manifest
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
@@ -116,7 +126,7 @@ var tasks = {
   // By default this task will only log a warning if a precompiler error is
   // raised.
   sass: function () {
-    return gulp.src('./assets/styles/*.scss')
+    return gulp.src('./assets/sass/*.scss')
     // sourcemaps + sass + error handling
     .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(sass({
@@ -142,36 +152,46 @@ var tasks = {
     .pipe(gulpif(production, rev()))
     // write sourcemaps to a specific directory
     // give it a file and save
-    .pipe(gulp.dest('./assets_compiled/styles'))
-    .pipe(write_to_revision_manifest('styles/'));
+    .pipe(gulp.dest('./assets_compiled/css'))
+    .pipe(write_to_revision_manifest('css/'));
   },
 
   // ### JS processing pipeline
   // `gulp browserify` - Runs JSHint then compiles, combines, and optimizes Bower JS
   // and project JS.
   browserify: function () {
-    var bundler = browserify('./assets/js/app.js', {
-      debug: production,
-      cache: {}
+    var js_files = {
+      './app.js': './assets/js/app.js',
+      './jquery.scrolldepth.js': './assets/js/jquery.scrolldepth.js',
+      './typekit.tinymce.js': './assets/js/typekit.tinymce.js',
+      './jquery.js': './assets/js/jquery.js'
+    };
+
+    forEach(js_files, function(js_file_name, js_file_source) {
+
+      var bundler = browserify(js_file_source, {
+        debug: production,
+        cache: {}
+      });
+
+      // determine if we're doing a build
+      // and if so, bypass the livereload
+      var build = argv._.length ? argv._[0] === 'build' : false;
+
+      if (watch) {
+        bundler = watchify(bundler);
+      }
+
+      return bundler.transform(hbsfy, { traverse: true })
+        .bundle()
+        .on('error', handle_error('Browserify'))
+        .pipe(source(js_file_name))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulpif(production, rev()))
+        .pipe(gulp.dest('./assets_compiled/js/'))
+        .pipe(write_to_revision_manifest('js/'));
     });
-
-    // determine if we're doing a build
-    // and if so, bypass the livereload
-    var build = argv._.length ? argv._[0] === 'build' : false;
-
-    if (watch) {
-      bundler = watchify(bundler);
-    }
-
-    return bundler.transform(hbsfy, { traverse: true })
-      .bundle()
-      .on('error', handle_error('Browserify'))
-      .pipe(source('app.js'))
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(gulpif(production, rev()))
-      .pipe(gulp.dest('./assets_compiled/js/'))
-      .pipe(write_to_revision_manifest('js/'));
   },
 
   // ### Images
@@ -200,7 +220,7 @@ var tasks = {
 
 gulp.task('browser-sync', function () {
   browserSync({
-    proxy: "wordpress-starter.local:8888",
+    proxy: our_proxy_url,
     port: process.env.PORT || 3000,
     open: false,
     files: [
@@ -248,7 +268,7 @@ gulp.task('watch', ['sass', 'browserify', 'browser-sync'], function () {
   // --------------------------
   // watch:sass
   // --------------------------
-  gulp.watch('./assets/styles/**/*.scss', ['sass', 'reload-sass']);
+  gulp.watch('./assets/css/**/*.scss', ['sass', 'reload-sass']);
 
   // --------------------------
   // watch:js
@@ -268,7 +288,7 @@ gulp.task('watch', ['sass', 'browserify', 'browser-sync'], function () {
   // --------------------------
   // watch:ruby_html
   // --------------------------
-  gulp.watch('./**/*.{ru,html,haml}', ['reload-html']);
+  gulp.watch('./**/*.{ru,html,haml,php,html}', ['reload-html']);
 
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));

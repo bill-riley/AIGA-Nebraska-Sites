@@ -44,10 +44,8 @@ function just_enqueue_first_page_load($assets) {
 		wp_enqueue_script('jquery-pjax', $assets['jquery-pjax'], array(), null, true);
 	}
 
-	wp_enqueue_script('neighborhood_element_queries', get_template_directory_uri() . $assets['element_queries.js'], array(), null, true);
-	wp_enqueue_script('neighborhood_js', get_template_directory_uri() . $assets['main.js'], array(), null, true);
+	wp_enqueue_script('neighborhood_js', get_template_directory_uri() . $assets['app.js'], array(), null, true);
 	wp_enqueue_script('neighborhood_analytics', get_template_directory_uri() . $assets['jquery.scrolldepth.js'], array(), null, true);
-	wp_enqueue_script('neighborhood_select', get_template_directory_uri() . $assets['select.js'], array(), null, true);
 }
 
 /**
@@ -66,8 +64,8 @@ function just_enqueue_first_page_load($assets) {
 function neighborhood_scripts() {
 
 	$assets_basepath = '/assets_compiled';
-	$styles_subdir = '/styles';
-	$scripts_subdir = '/scripts';
+	$styles_subdir = '/css';
+	$scripts_subdir = '/js';
 
 	$assets_json_path = get_template_directory() . $assets_basepath . '/assets.json';
 
@@ -99,10 +97,9 @@ function neighborhood_scripts() {
 	} else {
 		$base_assets['main.css'] = $assets_basepath . $styles_subdir . '/main.css';
 		$base_assets['compatibility.css'] = $assets_basepath . $styles_subdir . '/compatibility.css';
-		$base_assets['main.js'] = $assets_basepath . $scripts_subdir . '/main.js';
+		$base_assets['app.js'] = $assets_basepath . $scripts_subdir . '/app.js';
 		$base_assets['element_queries.js'] = $assets_basepath . $scripts_subdir . '/element_queries.js';
 		$base_assets['jquery.scrolldepth.js'] = $assets_basepath . $scripts_subdir . '/jquery.scrolldepth.js';
-		$base_assets['select.js'] = $assets_basepath . $scripts_subdir . '/select.js';
 	}
 
 	if ( pjaxify( true ) ) {
@@ -132,7 +129,7 @@ function neighborhood_jquery_local_fallback($src, $handle = null) {
 	static $add_jquery_fallback = true;
 
 	if ($add_jquery_fallback) {
-		echo '<script type="text/javascript">window.jQuery || document.write(\'<script type="text/javascript" src="' . get_template_directory_uri() . '/assets_compiled/scripts/jquery.js"><\/script>\')</script>' . "\n";
+		echo '<script type="text/javascript">window.jQuery || document.write(\'<script type="text/javascript" src="' . get_template_directory_uri() . '/assets_compiled/js/jquery.js"><\/script>\')</script>' . "\n";
 		$add_jquery_fallback = false;
 	}
 

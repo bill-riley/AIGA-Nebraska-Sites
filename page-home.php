@@ -30,5 +30,3 @@
 		<?php endif; ?>
 	</article>
 <?php endwhile; ?>
-
-<?php sendo()->append_javascript('assets/js/min/select-min.js'); ?>
