@@ -455,6 +455,25 @@ function get_id_by_slug($page_slug) {
 }
 
 /**
+ * Add the caldera forms assets on a page if it requires it.
+ */
+function add_caldera_forms_assets_ajax() {
+	sendo()->capture_javascript_start(); ?>
+		<script type="text/javascript">window.a = $;</script>
+
+	<?php
+	sendo()->capture_javascript_end();
+
+	sendo()->prepend_css(get_site_url() . '/wp-content/plugins/caldera-forms/assets/css/caldera-grid.css?ver=' . CFCORE_VER)
+		   ->prepend_css(get_site_url() . '/wp-content/plugins/caldera-forms/assets/css/fields.min.css?ver=' . CFCORE_VER)
+		   ->append_javascript(get_site_url() . '/wp-content/plugins/caldera-forms/assets/js/jquery.baldrick.min.js?ver=' . CFCORE_VER)
+		   ->append_javascript(get_site_url() . '/wp-content/plugins/caldera-forms/assets/js/ajax-core.min.js?ver=' . CFCORE_VER)
+		   ->append_javascript(get_site_url() . '/wp-content/plugins/caldera-forms/assets/js/fields.min.js?ver=' . CFCORE_VER)
+		   ->append_javascript(get_site_url() . '/wp-content/plugins/caldera-forms/assets/js/parsley.min.js?ver=' . CFCORE_VER)
+		   ->append_javascript(get_site_url() . '/wp-content/plugins/caldera-forms/assets/js/frontend-script-init.min.js?ver=' . CFCORE_VER);
+}
+
+/**
  * convert a word to a number
  */
 function convert_to_number($digit)
