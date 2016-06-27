@@ -41,6 +41,12 @@
 		bottom: 50%;
 	}
 
+	// svg symbols
+	svg.symbols {
+		path, circle, rect, polygon {
+			fill: currentColor;
+		}
+	}
 
 	// Video
 	video::-webkit-media-controls {

@@ -10,8 +10,8 @@
 	input[type="password"],
 	textarea,
 	select {
-		font: normal 700 1.6rem / 1.8 $body-font;
-		padding: 12px 14px; /* The 6px vertically centers text on FF, ignored by Webkit */
+		font: normal 500 2rem / 1.8 $body-font !important;
+		padding: .75em .875em;
 		background-color: #F5F9FC;
 		border: 1px solid #A7BFDA;
 		border-radius: 0.2em;
@@ -22,6 +22,11 @@
 			border-color: mix(#A7BFDA, $body-dark, 75%);
 			outline: 0;
 		}
+	}
+
+	input[type="password"] {
+		letter-spacing: 0.2em;
+		font-weight: 900 !important;
 	}
 
 	/* Removes awkward default styles on some inputs for iOS */
@@ -44,11 +49,11 @@
 		font: normal 700 2rem / 1.4 $body-font;
 		display: block;
 		margin-bottom: .5rem;
-		color: $gray;
+		color: $current_year-secondary;
 
 		.field-required,
 		.field_required {
-			color: $gray-light !important;
+			color: $current_year-primary !important;
 			margin-left: -3px;
 		}
 	}

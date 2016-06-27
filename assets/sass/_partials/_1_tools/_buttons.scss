@@ -6,51 +6,32 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"] {
-		font: normal 700 1.3rem / 1.4 $button-font;
+		font: normal 900 1.6rem / 1.4 $button-font !important;
 		position: relative;
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
 		background-color: transparent;
-		border: 0;
+		border: .125em solid $current_year-primary;
 		cursor: pointer;
 		transition: all 0.2s $cubic-bezier 0s;
 		color: $cta;
 		display: inline-flex;
 		margin: 0;
 		padding: 0.875em 1.428571429em;
-		letter-spacing: 0.2em;
+		letter-spacing: 0.06em;
 
-		&::after {
-			content: '';
-			width: 80%;
-			left: 50%;
-			height: 1px;
-			bottom: 0;
-			transform: translatex(-50%);
-			transition: width 0.2s $cubic-bezier 0.4s,
-									background 0.2s $cubic-bezier 0s;
-			display: block;
-			position: absolute;
-			background: $cta;
-		}
-
-		&:hover {
+		&:hover,
+		&:focus {
 			opacity: 1;
 			outline: 0;
 			color: $body-dark !important;
 			text-decoration: none;
 			transition: color 0.2s $cubic-bezier 0s;
-		}
 
-		&:focus {
 			background: #232F39;
 			color: white !important;
 			transition: all 0.2s $cubic-bezier;
-
-			&::after {
-				opacity: 0;
-			}
 		}
 
 		&.active {

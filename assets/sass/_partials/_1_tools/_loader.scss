@@ -2,21 +2,24 @@
 	:: Loader Bar
 	---------------------------------- */
 	#loader-bar {
-		background: $cta;
+		background: $current_year-primary;
+		background: linear-gradient(to left, $current_year-primary 0vw, $current_year-secondary 15vw);
+		mix-blend-mode: lighten;
 		position: fixed;
 		top: 0;
-		height: 2px;
+		height: $nav-mobile-height;
 		left: 0;
 		width: 0vw;
 		z-index: 20;
-		transition: all 0.25s $cubic-bezier 0ms;
+		transition: all 0.65s $cubic-bezier 0ms;
+		pointer-events: none;
 	}
 
-	#loader-bar dd,
-	#loader-bar dt {
-		box-shadow: $cta 1px 0 6px 1px;
-		position: absolute;
-		right: 0;
-		width: 5vw;
-		transition: all 0.25s $cubic-bezier 0ms;
-	}
+	// #loader-bar dd,
+	// #loader-bar dt {
+	// 	box-shadow: $primary-2016 1px 0 6px 1px;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 5vw;
+	// 	transition: all 0.25s $cubic-bezier 0ms;
+	// }

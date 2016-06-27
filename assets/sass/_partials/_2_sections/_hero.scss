@@ -1,0 +1,202 @@
+.hero {
+	padding-bottom: 0;
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		height: 4px;
+		width: 100%;
+		z-index: 2;
+		background-color: $body-dark;
+	}
+
+	.content {
+		max-width: 750px;
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+		z-index: 1;
+		position: relative;
+
+		figure {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		* {
+			color: white;
+		}
+	}
+
+	.container {
+		position: relative;
+
+		&:first-of-type {
+			.column {
+				margin: 7rem auto 5rem;
+			}
+		}
+
+		&.mask {
+			margin: 0;
+
+			.column {
+				align-self: baseline;
+				margin: 0;
+				padding: 0 0 3rem 0;
+			}
+
+			& > .column {
+				align-self: baseline;
+				margin: 0;
+				padding: 6rem 0 3rem 0;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			@include min-width(475px) {
+				&::before {
+					content: '';
+					display: block;
+					height: 75%;
+					position: absolute;
+					z-index: 1;
+					bottom: 0;
+					left: calc(50% - 2px);
+					width: 4px;
+					background: rgba(33,61,75,0.8);
+					background: linear-gradient(to bottom, rgba(33,61,75,0) 0%, rgba(33,61,75,0) 20%, #213d4b 80%, #213d4b 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00213d4b', endColorstr='#213d4b',GradientType=0 );
+				}
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background: rgba(111,201,193,0.55);
+				background: linear-gradient(45deg, rgba(33,61,75,0.75) 0%, rgba(111,201,193,0.75) 100%);
+				-webkit-backdrop-filter: blur(4px);
+				-webkit-transition: all 0.3s cubic-bezier(0.15, 0.5, 0.5, 0.95) 0s;
+				transition: all 0.3s cubic-bezier(0.15, 0.5, 0.5, 0.95) 0s;
+			}
+		}
+	}
+
+	& > .container:nth-of-type(2) {
+		.home & {
+
+			&::before {
+				height: 100%;
+
+				@include max-width(650px) {
+					display: none;
+				}
+			}
+
+			.column {
+				padding: 6rem 0;
+
+				@include max-width(650px) {
+					&:first-of-type {
+						border-bottom: 4px solid $current_year-secondary;
+					}
+				}
+			}
+		}
+
+		.how-to-enter & {
+			div.offset {
+				position: absolute;
+				max-width: 1300px;
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+				@include min-width(900px) {
+
+					&::before,
+					&::after {
+						content: '';
+						display: block;
+						height: 75%;
+						position: absolute;
+						z-index: 1;
+						bottom: 0;
+						left: calc(25% - 2px);
+						width: 4px;
+						background: rgba(33,61,75,0.8);
+						background: linear-gradient(to bottom, rgba(33,61,75,0) 0%, rgba(33,61,75,0) 20%, #213d4b 80%, #213d4b 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00213d4b', endColorstr='#213d4b',GradientType=0 );
+					}
+
+					&::after {
+						left: calc(75% - 2px);
+					}
+				}
+			}
+
+			@include max-width(900px) {
+				.one-fourth {
+					.column:first-of-type,
+					.column:nth-of-type(2) {
+						position: relative;
+						margin-bottom: 4rem;
+
+						&::after {
+							content: '';
+							display: block;
+							position: absolute;
+							width: 100%;
+							bottom: 0;
+							left: -5vw;
+							height: 4px;
+							background: rgba(33,61,75,0.8);
+							background: linear-gradient(to left, rgba(33,61,75,0) 0%, rgba(33,61,75,0) 20%, #213d4b 80%, #213d4b 100%);
+						}
+					}
+
+					.column:nth-of-type(2)::after {
+						left: auto;
+						right: -5vw;
+						background: rgba(33,61,75,0.8);
+						background: linear-gradient(to right, rgba(33,61,75,0) 0%, rgba(33,61,75,0) 20%, #213d4b 80%, #213d4b 100%);
+					}
+				}
+			}
+
+			@include max-width(475px) {
+				.one-fourth {
+					.column:nth-of-type(3) {
+						position: relative;
+						margin-bottom: 4rem;
+
+						&::after {
+							content: '';
+							display: block;
+							position: absolute;
+							width: 100%;
+							bottom: 0;
+							left: -5vw;
+							height: 4px;
+							background: rgba(33,61,75,0.8);
+							background: linear-gradient(to left, rgba(33,61,75,0) 0%, rgba(33,61,75,0) 20%, #213d4b 80%, #213d4b 100%);
+						}
+					}
+				}
+			}
+		}
+	}
+}

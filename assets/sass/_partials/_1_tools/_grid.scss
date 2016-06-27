@@ -224,7 +224,7 @@
 
 		&.one-fourth {
 			& > .column {
-				@include min-width(650px) {
+				@include min-width(475px) {
 					flex: 0 0 50%;
 				}
 
@@ -235,7 +235,7 @@
 
 			&.bleed {
 				& > .column {
-					@include min-width(650px) {
+					@include min-width(475px) {
 						flex: 0 0 50%;
 					}
 
@@ -247,18 +247,18 @@
 
 			&.padding {
 				& > .column {
-					@include min-width(650px) {
+					@include min-width(475px) {
 						flex: 0 0 calc( 50% - #{$padding-base} );
 					}
 
-					@include min-width(801px) {
+					@include min-width(901px) {
 						flex: 0 0 calc( 25% - #{$padding-base * 1.4} );
 					}
 				}
 
 				&.bleed {
 					& > .column {
-						@include min-width(650px) {
+						@include min-width(475px) {
 							flex: 0 0 calc( 50% - #{$padding-base} );
 						}
 

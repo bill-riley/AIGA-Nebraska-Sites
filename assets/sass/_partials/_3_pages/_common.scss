@@ -46,8 +46,9 @@ section {
 
 		h1 {
 			@include max-width(950px) {
-				font-size: 16vw;
-				margin-bottom: 0.1em;
+				font-size: 10vw;
+				margin-bottom: 2.8rem;
+				line-height: 1.5;
 			}
 		}
 	}

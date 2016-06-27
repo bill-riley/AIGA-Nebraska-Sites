@@ -4,7 +4,14 @@ if (function_exists('get_field')) {
 	/**
 	 * Configuration values
 	 */
-	define('GOOGLE_ANALYTICS_ID', get_field('seo_google_analytics_ua_code', 'option')); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
+
+	$query = 'SELECT `wp_options`.`option_value` FROM `wp_options` ';
+	$google_analytics_ua_code_query = $query . 'WHERE `wp_options`.`option_name` = "seo_google_analytics_ua_code" ';
+
+	$google_analytics_ua_code = $wpdb->get_var( $google_analytics_ua_code_query );
+
+
+	define('GOOGLE_ANALYTICS_ID', $google_analytics_ua_code); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 } else {
 	define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 }

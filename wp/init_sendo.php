@@ -327,6 +327,7 @@ class SENDO {
 		return $this;
 	}
 
+
 	/**
 	 * Output all stored data
 	 *
@@ -334,7 +335,10 @@ class SENDO {
 	 */
 	public function prepare_output() {
 		$shareable_image = (get_field('sdo_fallback_image')) ? get_field('sdo_fallback_image') : get_field('sdo_fallback_image', 'options');
-		$shareable_image = ($shareable_image) ? array_shift(wp_get_attachment_image_src($shareable_image, 'full') ) : get_template_directory_uri().'/assets/img/default-sharing.png';
+		// Check if image exists, if it does then set the shareable image as it.
+		if(wp_get_attachment_image_src($shareable_image, 'full')) {
+			$shareable_image = array_shift(wp_get_attachment_image_src($shareable_image, 'full') );
+		}
 		$twitter_card = (get_field('sdo_twitter_card') && get_field('sdo_twitter_card') !== 'none') ? get_field('sdo_twitter_card') : get_field('sdo_twitter_card', 'options');
 		$creator = (get_field('sdo_twitter_card_creator')) ? get_field('sdo_twitter_card_creator') : get_field('sdo_twitter_card_creator', 'options');
 

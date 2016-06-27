@@ -10,7 +10,7 @@
 
 		&.sticky {
 			position: fixed;
-			top: $nav-min-height;
+			top: $nav-mobile-height;
 			z-index: 2;
 			padding: 2rem 0;
 			box-shadow: 0 0 5px 0 rgba(0,0,0,0.15);
@@ -22,7 +22,7 @@
 
 		@include min-width(783px) {
 			body.admin-bar & {
-				top: calc(#{$nav-min-height} + 32px);
+				top: calc(#{$nav-mobile-height} + 32px);
 			}
 		}
 
@@ -36,10 +36,10 @@
 
 		@include min-width(1101px) {
 			&.sticky {
-				top: $nav-height;
+				top: $nav-desktop-height;
 
 				body.admin-bar & {
-					top: calc(#{$nav-height} + 32px);
+					top: calc(#{$nav-desktop-height} + 32px);
 				}
 			}
 		}

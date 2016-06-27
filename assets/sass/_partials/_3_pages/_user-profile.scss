@@ -1,6 +1,5 @@
 .user-profile {
 	.hero {
-
 		.bg-image-blur {
 			position: absolute;
 			background: 50% 45% / cover no-repeat;
@@ -26,18 +25,21 @@
 		}
 
 		.column {
-			margin: 17rem auto 15rem auto;
+			margin: 15rem auto;
 
 			.content {
 				display: flex;
 				align-items: center;
+				justify-content: space-between;
 				flex-wrap: wrap;
+				max-width: 100%;
+				width: 100%;
 
 				.left {
 					flex: 0 0 160px;
 
 					.profile-pic {
-						width: 90%;
+						width: 100%;
 						height: auto;
 						margin: 0 auto;
 						padding: .3rem;
@@ -48,7 +50,7 @@
 				}
 
 				.right {
-					flex: 11 11 calc(100% - 160px);
+					flex: 0 0 calc(100% - 180px);
 
 					h1 {
 						line-height: 1;
@@ -71,6 +73,17 @@
 					flex: 0 0 100%;
 
 					ul {
+						margin: 1.2rem 0 0 0;
+
+						li {
+							margin: 0;
+						}
+
+						a {
+							// border: 0;
+							padding: .4375em .952380953em;
+						}
+
 						svg {
 							path {
 								fill: white;

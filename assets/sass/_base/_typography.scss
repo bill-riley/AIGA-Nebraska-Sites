@@ -103,7 +103,7 @@
 	/* Links */
 	a {
 		position: relative;
-		text-decoration: none;
+		text-decoration: none !important;
 		color: $cta;
 		opacity: 1;
 		line-height: inherit;

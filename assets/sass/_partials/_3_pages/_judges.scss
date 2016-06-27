@@ -2,8 +2,16 @@ section.judges-details {
 	background: #F6F6F8;
 	padding: 0;
 
+
+	.container:first-of-type {
+		.column.judge {
+			border-top: 0;
+		}
+	}
+
 	.column.judge {
 		max-height: 850px;
+		border: 4px solid $current_year-secondary;
 
 		.content {
 			text-align: center;
@@ -17,7 +25,7 @@ section.judges-details {
 			}
 
 			.h2 {
-				@include font-size(5);
+				font-size: 5rem;
 
 				@include max-width(950px) {
 					font-size: 8.5vw;
@@ -54,6 +62,7 @@ section.judges-details {
 
 		.content {
 			margin-right: auto;
+			text-align: center;
 			margin-left: 5rem;
 			width: 90%;
 			max-width: 700px;
@@ -90,7 +99,7 @@ section.judges-details {
 
 			&.kitchensink {
 				max-height: 32rem;
-				margin-bottom: 4rem;
+				margin-bottom: 0;
 				padding-top: 4rem;
 				padding-bottom: 8rem;
 				overflow: auto;
@@ -98,11 +107,15 @@ section.judges-details {
 			}
 
 			.h1 {
-				@include font-size(5.4);
+				font-size: 5.4rem;
 				letter-spacing: .04em;
 				text-transform: uppercase;
 				font-weight: 900;
 				margin-bottom: 0.05em;
+
+				@include max-width(800px) {
+					font-size: 9vw;
+				}
 			}
 
 			.h2 {
@@ -112,7 +125,7 @@ section.judges-details {
 			}
 
 			p {
-				@include font-size(1.6);
+				font-size: 1.6rem;
 				line-height: 2.2;
 
 				&:last-of-type {
@@ -132,11 +145,22 @@ section.judges-details {
 			.column.judge {
 				order: 2;
 			}
+			.column.details {
+				.content {
+					margin-right: 5rem;
+					margin-left: auto;
+				}
+			}
 		}
 	}
 
 	.one-half > .column {
-		@include max-width(950px) {
+
+		@include min-width(1060px) {
+			flex: 0 0 50% !important;
+		}
+
+		@include max-width(1060px) {
 			flex: 0 0 100%;
 
 			&.details .content {
@@ -154,8 +178,8 @@ section.judges-details {
 					align-items: center;
 
 					.column {
-					flex: 0 0 calc(33.3333333% - 1.666666667vw )  !important;
-				}
+						flex: 0 0 calc(33.3333333% - 1.666666667vw )  !important;
+					}
 				}
 			}
 		}
