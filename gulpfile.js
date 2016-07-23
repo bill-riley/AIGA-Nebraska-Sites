@@ -1,5 +1,5 @@
 'use strict';
-var our_proxy_url = "aiga-show.dev:8888";
+var our_proxy_url = "aiga-bco2016.dev:8888";
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
