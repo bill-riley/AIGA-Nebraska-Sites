@@ -1,4 +1,5 @@
-.home {
+// Home page
+#home-hero {
 	.hero {
 		background: #f4f4f4;
 
@@ -178,6 +179,45 @@
 				top: 306px;
 				left: 900px;
 			}
+		}
+	}
+}
+
+// Introduction
+#home-introduction {
+
+	.kitchensink {
+		padding: 0;
+	}
+
+	.column {
+		@include max-width(650px) {
+			align-self: flex-start;
+
+			&:first-of-type {
+				flex: 0 0 41.66666666666%;
+			}
+			&:last-of-type {
+				flex: 0 0 58.33333333331%;
+			}
+		}
+	}
+
+	p {
+		max-width: 518px;
+		font-weight: 600;
+
+		&.h1 {
+			font-size: 4.991rem;
+			font-weight: 500;
+
+			@include max-width(440px) {
+				font-size: 6.5vw;
+			}
+		}
+
+		@include min-width(1000px) {
+			margin-left: 5rem;
 		}
 	}
 }
