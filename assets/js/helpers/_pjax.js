@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 $(document).on('pjax:send', function() {
-	animate_loader(40);
+	animate_loader(80);
 
 	$('.dropdown-menu').removeClass('nav-opened');
 
@@ -36,7 +36,7 @@ $(document).on('pjax:complete', function() {
 });
 
 $(document).on('pjax:success', function () {
-	animate_loader(70);
+	animate_loader(100);
 });
 
 $(document).on('pjax:end', function() {
@@ -79,7 +79,6 @@ $(document).on('pjax:end', function() {
 	λ.rebind_magnific();
 	λ.rebind_figcaptions();
 	λ.init_testimonial();
-	λ.rebind_fancy_buttons();
 	λ.rebind_article_progress();
 	λ.rebind_hide_navigation_on_scroll();
 	λ.prevent_widows();
@@ -101,7 +100,7 @@ $(document).on('pjax:end', function() {
 	};
 
 
-    λ.object_fit_fallback();
+	λ.object_fit_fallback();
 
 	animate_loader(100);
 

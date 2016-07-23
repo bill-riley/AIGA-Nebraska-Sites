@@ -1,5 +1,5 @@
 'use strict';
-var our_proxy_url = "aiga-bco2016.dev:8888";
+var our_proxy_url = "aiga-bco2016.local:8888";
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -268,7 +268,7 @@ gulp.task('watch', ['sass', 'browserify', 'browser-sync'], function () {
   // --------------------------
   // watch:sass
   // --------------------------
-  gulp.watch('./assets/css/**/*.scss', ['sass', 'reload-sass']);
+  gulp.watch('./assets/sass/**/*.scss', ['sass', 'reload-sass']);
 
   // --------------------------
   // watch:js

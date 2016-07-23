@@ -5,7 +5,7 @@
 	header {
 		width: 100%;
 		position: fixed;
-		background: $gray;
+		background: white;
 		top: 0;
 		height: $nav-min-height;
 		z-index: 10;
@@ -15,7 +15,9 @@
 
 		// Offset if user is logged into WP
 		@include min-width(783px) {
-			.admin-bar & { top: 32px; }
+			.admin-bar & {
+				top: 32px;
+			}
 		}
 
 		.container {
