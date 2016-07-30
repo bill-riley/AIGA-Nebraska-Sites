@@ -3,13 +3,14 @@
 	.hero {
 		background: #f4f4f4;
 
+
 		&::after {
 			content: '';
 			display: block;
 			position: absolute;
 			bottom: 0;
 			width: 100%;
-			height: 135px;
+			height: 14.649%;
 			background: white;
 			z-index: 0;
 		}
@@ -18,6 +19,7 @@
 			position: relative;
 			max-width: 1300px;
 			height: 100%;
+			padding: 0;
 		}
 
 		.toy-container {
@@ -57,7 +59,6 @@
 	.figure {
 		position: absolute;
 		width: 100%;
-		outline: 1px solid black;
 	}
 
 	.toy {
@@ -66,7 +67,6 @@
 		z-index: 1;
 		left: auto;
 
-		outline: 1px solid black;
 
 		figure {
 			margin: 0;
@@ -81,106 +81,104 @@
 			bottom: 3.1527778%;
 			right: 12.2222222%;
 			width: 14.4444444%;
-			max-width: 208px;
+			height: 25.1%;
 			z-index: 2;
 		}
 
 		&.cowboy {
-			width: 22.8638889%;
-			height: 40.6132812%;
+			max-width: 141px;
+			width: 11.2918%;
+			height: 32.533281%;
 			right: 11.3527778%;
 			bottom: 5.859375%;
-			max-width: 329px;
-			max-height: 415px;
+		}
 
-			.thoughts {
-	width: 70.556237%;
-	height: 38.041262%;
-	top: 3%;
-			}
-
-			.figure {
-				width: 52.8272029%;
-				height: 83.0412619%;
-				right: 0;
-				bottom: 0;
-			}
+		&.cowboy-thoughts {
+			max-width: 229px;
+			width: 15.956237%;
+			height: 17.541262%;
+			right: 18.3527778%;
+			bottom: 29%;
 		}
 
 		&.monkey {
-			width: 335px;
-			height: 512px;
-			right: 411px;
-			bottom: 80px;
+			width: 20.2638889%;
+			height: 33.5%;
+			right: 31.5416667%;
+			bottom: 5.7825%;
+		}
 
-			.figure {
-				bottom: 0
-			}
-
-			.thoughts {
-				top: 26px;
-				left: 37px;
-			}
+		&.monkey-thoughts {
+			width: 11.1805556%;
+			height: 18.75%;
+			right: 37.9216667%;
+			bottom: 36.7625%;
 		}
 
 		&.barbie {
-			width: 385px;
-			height: 702px;
-			right: 668px;
-			bottom: 50px;
+			width: 26.7361111%;
+			height: 46.354688%;
+			right: 46.65%;
+			bottom: 5.75%;
+		}
 
-			.thoughts {
-				top: -6px;
-				left: 202px;
-			}
+		&.barbie-thoughts {
+			width: 13.036111%;
+			height: 22.154688%;
+			// max-width: 382px;
+			// max-height: 470px;
+			right: 46.25%;
+			bottom: 51.75%;
 		}
 
 		&.troll {
-			width: 170px;
-			height: 585px;
-			right: 876px;
-			bottom: 84px;
+			width: 11.7361111%;
+			height: 40.8203125%;
+			right: 60.8333333%;
+			bottom: 4.35%;
+		}
 
-			.thoughts {
-				top: 46px;
-				left: 11px;
-			}
+		&.troll-thoughts {
+			width: 10.9027778%;
+			height: 20.3125%;
+			right: 60.846875%;
+			bottom: 40.45%;
 		}
 
 		&.pirate {
-			width: 132px;
-			height: 205px;
-			right: 998px;
-			bottom: 34px;
+			width: 9.1666667%;
+			height: 20.0195312%;
+			right: 69.3055556%;
+			bottom: 3.3203125%;
 			z-index: 3;
-
-			.thoughts {
-				// none?!
-			}
 		}
 
 		&.giraffe {
-			width: 600px;
-			height: 558px;
-			right: 752px;
-			bottom: 452px;
+			width: 30%;
+			height: 69.921875%;
+			right: 63.8222222%;
+			bottom: 7.7%;
+		}
 
-			.thoughts {
-				top: 68px;
-				left: 402px;
-			}
+		&.giraffe-thoughts {
+			width: 13.4722222%;
+			height: 20.8984375%;
+			right: 52.5222222%;
+			bottom: 71%;
 		}
 
 		&.dinosaur {
-			width: 1240px;
-			height: 558px;
-			right: 1042px;
-			bottom: 470px;
+			width: 86.1111111%;
+			height: 65.7226562%;
+			right: 72.3111111%;
+			bottom: 4.7%;
+		}
 
-			.thoughts {
-				top: 306px;
-				left: 900px;
-			}
+		&.dinosaur-thoughts {
+			width: 16.5277778%;
+			height: 29.8828125%;
+			right: 79.5%;
+			bottom: 40.8%;
 		}
 	}
 }
