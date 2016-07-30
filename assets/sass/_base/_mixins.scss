@@ -78,14 +78,9 @@
 	}
 
 	@mixin h6() {
-		font: normal 600 1.2rem $button_font;
-		display: inline-block;
-		padding: 0.6rem 0.8rem 0.6rem 1.2rem;
-		letter-spacing: 0.4em;
-		text-transform: uppercase;
-		margin: 0 auto 4rem auto;
+		font: normal 400 1.8rem $button_font;
+		margin: 0 auto;
 		color: $body_dark;
-		background: $gray_light;
 	}
 
 /*	-------------------------------------
