@@ -228,4 +228,111 @@
 	.container {
 		align-items: baseline;
 	}
+
+	h3, .h3 {
+		color: $yellow;
+		font-size: 2.4rem;
+	}
+
+	p {
+		color: white;
+		font-size: 1.6rem;
+		line-height: 1.65;
+	}
+}
+
+
+/* The Schedule Section */
+#home-schedule {
+	padding-top: 40px;
+
+	/* Intro content */
+	.schedule-content {
+
+		margin-bottom: 40px;
+	}
+	
+	/* Schedule Table */
+	.schedule-table {
+		margin-bottom: 40px;
+
+		// Phone styles first!
+		.column {
+			display: flex;
+			flex-wrap: wrap;
+			text-align: center;
+			padding-top: 30px;
+			margin-bottom: 30px;
+			border-top: 1px solid $orange;
+		}
+
+		/* Whenzit Happenin' */
+		.timeslot {
+			flex: 0 0 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+			p { 
+				font-size: 6rem; // eventually 10rem
+				line-height: 1; // for simplicity sake
+				margin-bottom: 10px;
+			}
+		}
+
+		/* Whaz goin' onnnn */
+		.timeslot-description {
+			flex: 0 0 100%;	
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		@include min-width(650px) {
+			.column {
+				padding: 0;
+				margin: 0;
+				text-align: left;
+			}
+
+			.timeslot {
+				flex: 0 0 33%;
+				border-right: 1px solid $orange;
+				
+				p { 
+					font-size: 7.5rem; // eventually 10rem
+					margin-bottom: 0;
+				}
+			}
+
+			.timeslot-description {
+				flex: 0 0 67%;	
+				padding: 40px 0 40px 30px;
+			}
+		}
+
+	}
+		// If it's an AM timeslot
+		.green-text {
+			.timeslot p, h6, .h6 { color: $green; }
+		}
+
+		// If it's a PM timeslot
+		.blue-text {
+			.timeslot p, h6, .h6 { color: $blue; }
+		}
+	
+	.timeslot-7P {
+		.timeslot {
+			p {
+				background: $blue;
+				color: white;
+				width: auto;
+				margin: 0 auto 10px;
+				border-radius: 100%;
+				padding: 20px;
+			}
+		}
+	}
 }
