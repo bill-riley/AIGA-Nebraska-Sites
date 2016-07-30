@@ -11,32 +11,43 @@
 				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__pedestal') .'"]'); ?>
 			</div>
 			<div class="toy cowboy">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__cowboy_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__cowboy') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__cowboy') .'"]'); ?>
+			</div>
+			<div class="toy cowboy-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__cowboy_thoughts') .'"]'); ?>
 			</div>
 			<div class="toy monkey">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__monkey_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__monkey') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__monkey') .'"]'); ?>
+			</div>
+			<div class="toy monkey-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__monkey_thoughts') .'"]'); ?>
 			</div>
 			<div class="toy barbie">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__barbie_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__barbie') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__barbie') .'"]'); ?>
+			</div>
+			<div class="toy barbie-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__barbie_thoughts') .'"]'); ?>
 			</div>
 			<div class="toy troll">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__troll_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__troll') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__troll') .'"]'); ?>
+			</div>
+			<div class="toy troll-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__troll_thoughts') .'"]'); ?>
 			</div>
 			<div class="toy pirate">
-				<?php //echo do_shortcode('[smart_image image_id="'. get_field('hero_image__pirate_thoughts') .'" class="thoughts"]'); // I guess he's not thinking ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__pirate') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__pirate') .'"]'); ?>
 			</div>
 			<div class="toy giraffe">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__giraffe_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__giraffe') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__giraffe') .'"]'); ?>
+			</div>
+			<div class="toy giraffe-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__giraffe_thoughts') .'"]'); ?>
 			</div>
 			<div class="toy dinosaur">
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__dinosaur_thoughts') .'" class="thoughts"]'); ?>
-				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__dinosaur') .'" class="figure"]'); ?>
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__dinosaur') .'"]'); ?>
+			</div>
+			<div class="toy dinosaur-thoughts">
+				<?php echo do_shortcode('[smart_image image_id="'. get_field('hero_image__dinosaur_thoughts') .'"]'); ?>
 			</div>
 		</div>
 		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAgAQAAAACu/8zpAAAAAnRSTlMAAHaTzTgAAAALSURBVHgBYxjmAAAA4AABsy8CLgAAAABJRU5ErkJggg==" width="45" height="32" class="sizer" />

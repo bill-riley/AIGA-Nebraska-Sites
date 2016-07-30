@@ -32,7 +32,7 @@
     "browser-sync": "latest",
     "cookies-js": "1.2.2",
     "crypto-js": "3.1.6",
-    "cssnano": "^2.1.0",
+    "gulp-cssnano": "latest",
     "del": "^1.2.1",
     "gulp": "^3.9.0",
     "gulp-exec": "^2.1.2",

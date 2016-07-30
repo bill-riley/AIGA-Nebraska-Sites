@@ -57,7 +57,7 @@
 	.figure {
 		position: absolute;
 		width: 100%;
-		// outline: 1px solid black;
+		outline: 1px solid black;
 	}
 
 	.toy {
@@ -66,7 +66,7 @@
 		z-index: 1;
 		left: auto;
 
-		// outline: 1px solid black;
+		outline: 1px solid black;
 
 		figure {
 			margin: 0;
@@ -90,16 +90,18 @@
 			height: 40.6132812%;
 			right: 11.3527778%;
 			bottom: 5.859375%;
+			max-width: 329px;
+			max-height: 415px;
 
 			.thoughts {
-				width: 69.5562373%;
-				height: 43.0412619%;
-				top: 0;
-				left: 0;
+	width: 70.556237%;
+	height: 38.041262%;
+	top: 3%;
 			}
 
 			.figure {
-				width: 42.8272029%;
+				width: 52.8272029%;
+				height: 83.0412619%;
 				right: 0;
 				bottom: 0;
 			}

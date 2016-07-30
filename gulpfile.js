@@ -17,7 +17,7 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var cssNano = require('cssnano');
+var cssnano = require('gulp-cssnano');
 
 // BrowserSync
 var browserSync = require('browser-sync');
@@ -57,27 +57,15 @@ var revision_manifest = './assets_compiled/revision.json';
 // ----------------------------
 // Error notification methods
 // ----------------------------
-var beep = function () {
-  var os = require('os');
-  var error = gulp.src('path/error.wav');
-  if (os.platform() === 'linux') {
-    error.pipe(exec('aplay <%= file.path %>'));
-  } else {
-    // mac
-    error.pipe(exec('afplay <%= file.path %>'));
-  }
-};
+var handle_error = function () {
+  var args = Array.prototype.slice.call(arguments);
 
-var handle_error = function (task) {
-  return function (err) {
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error.message %>'
+  }).apply(this, args);
 
-    notify.onError({
-      message: task + ' failed!',
-      sound: false
-    })(err);
-
-    gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
-  };
+  this.emit('end');
 };
 
 function forEach(object, callback) {
@@ -133,7 +121,7 @@ var tasks = {
       sourceComments: !production,
       outputStyle: production ? 'compressed' : 'nested'
     }))
-    .on('error', handle_error('Sass'))
+    .on('error', handle_error)
     // generate .maps
     .pipe(gulpif(!production, sourcemaps.write({
       'includeContent': false,
@@ -144,6 +132,7 @@ var tasks = {
       'loadMaps': true
     })))
     .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+    .pipe(gulpif(production, cssnano()))
     // we don't serve the source files
     // so include scss content inside the sourcemaps
     .pipe(sourcemaps.write({
@@ -184,7 +173,7 @@ var tasks = {
 
       return bundler.transform(hbsfy, { traverse: true })
         .bundle()
-        .on('error', handle_error('Browserify'))
+        .on('error', handle_error)
         .pipe(source(js_file_name))
         .pipe(buffer())
         .pipe(uglify())
