@@ -33,6 +33,7 @@ function neighborhood_login_logo() { ?>
 		outline: none;
 		overflow: hidden;
 		display: block;
+		pointer-events: none;
 	}
 </style>
 <?php }
