@@ -4,6 +4,7 @@
 
 	.container {
 		display: flex;
+		justify-content: flex-start;
 	}
 
 	li, p, ul {
@@ -56,6 +57,11 @@
 			figure {
 				width: 166.6666667%;
 			}
+		}
+
+		&:nth-of-type(5n+5) {
+			margin-left: 33.33333%;
+			margin-bottom: 22rem;
 		}
 	}
 
