@@ -14,13 +14,15 @@
 					<?php the_sub_field('content'); ?>
 				</div>
 
-				<?php if ( ( $i % 5 ) == 1 || ( $i % 5 ) == 4 ): // First or fourth element ?>
-					<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_1') .'"]'); ?>
-				<?php elseif ( ( $i % 5 ) == 3 || ( $i % 5 ) == 0 ): // third or fifth element ?>
-					<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_3') .'"]'); ?>
-				<?php else: // third or fifth element ?>
-					<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_2') .'"]'); ?>
-				<?php endif; ?>
+				<div class="parallax-thoughts">
+					<?php if ( ( $i % 5 ) == 1 || ( $i % 5 ) == 4 ): // First or fourth element ?>
+						<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_1') .'"]'); ?>
+					<?php elseif ( ( $i % 5 ) == 3 || ( $i % 5 ) == 0 ): // third or fifth element ?>
+						<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_3') .'"]'); ?>
+					<?php else: // third or fifth element ?>
+						<?php echo do_shortcode('[smart_image image_id="'. get_field('faqs_image_2') .'"]'); ?>
+					<?php endif; ?>
+				</div>
 
 			</div>
 			<?php $i++; ?>

@@ -18,7 +18,9 @@ window.λ = function lambda() {
 
 	$('.parallax-background').css("transform", "perspective(300px) rotateY( " + (x / 600) + "deg )  rotateX( " + (y / 200) + "deg ) translateZ(-100px) scale(1.5)");
 
-	$('.event-background').css("transform", "perspective(300px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 800) + "deg ) translateY(-50%) translateZ(-100px) scale(1.5)");
+	$('.parallax-thoughts:nth-of-type(2n+1)').css("transform", "perspective(3000px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 100) + "deg ) translateZ(-1px) scale(1)");
+	$('.parallax-thoughts:nth-of-type(2n+2)').css("transform", "perspective(3000px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 100) + "deg ) translateZ(1px) scale(1)");
+
 };
 
 λ.mouse_and_gyro_parallax = function() {
