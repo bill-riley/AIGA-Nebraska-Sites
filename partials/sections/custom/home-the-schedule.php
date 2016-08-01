@@ -1,4 +1,17 @@
 <section id="home-schedule" class="anim fadeIn">
+	<div class="container toy-container">
+		<div class="toy team-mystic-robot scroll-parallax" data-parallax-dampening="15" data-parallax-type="abs" data-parallax-dir="reverse">
+			<div class="parallax-background">
+				<?php echo do_shortcode("[smart_image image_id='".get_field('schedule_team_mystic_robot')."']"); ?>
+			</div>
+		</div>
+		<div class="toy team-valor-robot scroll-parallax" data-parallax-dampening="12" data-parallax-type="abs" data-parallax-dir="reverse">
+			<div class="parallax-background">
+				<?php echo do_shortcode("[smart_image image_id='".get_field('schedule_team_valor_robot')."']"); ?>
+			</div>
+		</div>
+	</div>
+
 	<div class="container schedule-content">
 		<div class="column">
 			<?php the_field('schedule_content'); ?>

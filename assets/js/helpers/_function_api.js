@@ -50,6 +50,26 @@ window.λ = function lambda() {
 	});
 };
 
+λ.scroll_parallax = function() {
+	var cached_els = $('.scroll-parallax');
+
+	$(window).on('scroll.manage_scroll_parallax', function() {
+		var cached_scroll_top = $(window).scrollTop();
+
+		cached_els.each(function() {
+			var dampening = ($(this).attr('data-parallax-dampening')) ? $(this).attr('data-parallax-dampening') : 1;
+			var type = ($(this).attr('data-parallax-type') === "abs") ? 'px' : '%' ;
+
+			// $(this).css('transform', 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -' + ( percentage )  + ', 0, 1)');
+			if ($(this).attr('data-parallax-dir') !== "reverse") {
+				$(this).css("transform", "translateY( " + ( ( cached_scroll_top / dampening ) ) + type + " )");
+			} else {
+				$(this).css("transform", "translateY( -" + ( ( cached_scroll_top / dampening ) ) + type + " )");
+			}
+		})
+	});
+};
+
 λ.select_text = function(container_id) {
 	if (document.selection) {
 		var range = document.body.createTextRange();

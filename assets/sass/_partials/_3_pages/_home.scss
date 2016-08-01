@@ -40,6 +40,8 @@
 }
 
 #home-tracks {
+	padding: 8rem 0;
+
 	.container {
 		align-items: baseline;
 	}
@@ -59,12 +61,64 @@
 
 /* The Schedule Section */
 #home-schedule {
-	padding-top: 40px;
+	padding-top: 10rem;
+	position: relative;
+
+	/* Rock Em Sock Em */
+	.toy-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 0;
+		height: 0;
+
+		.toy {
+			position: absolute;
+			width: 30%;
+
+			figure {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		.team-mystic-robot {
+			top: 142px;
+			left: 0px;
+			max-width: 330px;
+
+			@include min-width(750px) {
+				left: -80px;
+			}
+		}
+
+		.team-valor-robot {
+			right: -20px;
+			top: 400px;
+			max-width: 416px;
+
+			@include min-width(750px) {
+				right: -160px;
+			}
+		}
+	}
+
 
 	/* Intro content */
 	.schedule-content {
-
 		margin-bottom: 40px;
+		z-index: 1;
+		position: relative;
+
+		h6 {
+			font-size: 3.2rem;
+			color: $magenta;
+		}
+
+		figure {
+			margin: 3.6rem auto 2rem auto;
+		}
 	}
 
 	/* Schedule Table */

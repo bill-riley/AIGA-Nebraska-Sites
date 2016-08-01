@@ -57,10 +57,6 @@
             $('header').addClass('mini')
           }
 
-          // var percentage = $(window).scrollTop() / $(document).innerHeight();
-
-          // $('.layer_1').css('transform', 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -' + ( percentage )  + ', 0, 1)');
-
         });
 
         λ.toggle_navigation = function() {
@@ -94,10 +90,7 @@
         λ.rebind_article_progress();
         λ.rebind_hide_navigation_on_scroll();
         λ.rebind_textarea_autoresize();
-
-        if ($('body').hasClass('new-business')) {
-          λ.new_business_page_init();
-        }
+        λ.scroll_parallax();
 
         setTimeout(function() {
           var our_iOS = /iPhone|iPod/.test(navigator.platform);
