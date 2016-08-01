@@ -18,7 +18,9 @@ window.λ = function lambda() {
 
 	$('.parallax-background').css("transform", "perspective(300px) rotateY( " + (x / 600) + "deg )  rotateX( " + (y / 200) + "deg ) translateZ(-100px) scale(1.5)");
 
-	$('.event-background').css("transform", "perspective(300px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 800) + "deg ) translateY(-50%) translateZ(-100px) scale(1.5)");
+	$('.parallax-thoughts:nth-of-type(2n+1)').css("transform", "perspective(3000px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 100) + "deg ) translateZ(-1px) scale(1)");
+	$('.parallax-thoughts:nth-of-type(2n+2)').css("transform", "perspective(3000px) rotateY( " + (x / 100) + "deg )  rotateX( " + (y / 100) + "deg ) translateZ(1px) scale(1)");
+
 };
 
 λ.mouse_and_gyro_parallax = function() {
@@ -47,6 +49,26 @@ window.λ = function lambda() {
 				λ.acceleration_updates(x, y, newx, newy, event);
 			});
 		}
+	});
+};
+
+λ.scroll_parallax = function() {
+	var cached_els = $('.scroll-parallax');
+
+	$(window).on('scroll.manage_scroll_parallax', function() {
+		var cached_scroll_top = $(window).scrollTop();
+
+		cached_els.each(function() {
+			var dampening = ($(this).attr('data-parallax-dampening')) ? $(this).attr('data-parallax-dampening') : 1;
+			var type = ($(this).attr('data-parallax-type') === "abs") ? 'px' : '%' ;
+
+			// $(this).css('transform', 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -' + ( percentage )  + ', 0, 1)');
+			if ($(this).attr('data-parallax-dir') !== "reverse") {
+				$(this).css("transform", "translateY( " + ( ( cached_scroll_top / dampening ) ) + type + " )");
+			} else {
+				$(this).css("transform", "translateY( -" + ( ( cached_scroll_top / dampening ) ) + type + " )");
+			}
+		})
 	});
 };
 

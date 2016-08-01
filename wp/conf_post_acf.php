@@ -3,19 +3,21 @@
 
 if (function_exists('get_field')) {
 
-	include 'acf/brand.php';
-	include 'acf/images.php';
-	include 'acf/users.php';
+	include 'acf/brand.php'; // Responsible for setting up the brand tab at /wp-admin/admin.php?page=theme-general-settings
+	include 'acf/images.php'; // Responsible for extra image settings
+	include 'acf/users.php'; // responsible for extending what Information Users have
 
 	if (get_field('enable_page_builder', 'options')) {
-		include 'acf/page-content.php';
+		include 'acf/page-content.php'; // Responsible for adding page sections functionality
 	}
 
-	include 'acf/seo.php';
-	include 'acf/sdo.php';
-	include 'acf/apis.php';
-	include 'acf/page-seo_and_sdo.php';
 
+	include 'acf/seo.php'; // Responsible for adding site-wide SEO features
+	include 'acf/sdo.php'; // Responsible for adding site-wide Social Discovery features
+	include 'acf/apis.php'; // Responsible for adding site-wide API features
+	include 'acf/page-seo_and_sdo.php'; // Responsible for adding page specific SEO & Social Discovery features
+
+	include 'acf/_site.php'; // Responsible for loading site specific ACF
 
 	if (function_exists('acf_add_options_page')) {
 		/**

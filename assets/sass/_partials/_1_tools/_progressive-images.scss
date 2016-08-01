@@ -17,11 +17,6 @@
 		}
 	}
 
-	&:hover {
-		position: relative;
-		z-index: 99;
-	}
-
 	img {
 		width: 100%;
 		overflow: hidden;
@@ -40,7 +35,7 @@
 		image-rendering: crisp-edges;
 		-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
 		opacity: 1;
-		filter: blur(4px);
+		filter: blur(2px);
 		overflow: hidden;
 		transition: opacity 0.75s $ease 1.25s,
 					filter 0.75s $ease 1.25s;

@@ -1,187 +1,4 @@
 // Home page
-#home-hero {
-	.hero {
-		background: #f4f4f4;
-
-
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 14.649%;
-			background: white;
-			z-index: 0;
-		}
-
-		.container {
-			position: relative;
-			max-width: 1300px;
-			height: 100%;
-			padding: 0;
-		}
-
-		.toy-container {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			max-width: 1440px;
-			margin: 0 auto;
-			left: 0;
-			right: 0;
-		}
-
-		.column {
-			width: 100%;
-			max-width: 482px;
-			position: absolute;
-			right: 0;
-			margin-top: 85px;
-
-			figure {
-				margin: 0 0 3.6rem 0;
-			}
-
-			h3 {
-				text-align: right;
-				padding-right: 10px;
-				font-size: 2.498rem;
-				font-weight: bold;
-				font-style: italic;
-				color: $magenta;
-			}
-		}
-	}
-
-	.thoughts,
-	.figure {
-		position: absolute;
-		width: 100%;
-	}
-
-	.toy {
-		position: absolute;
-		width: 100%;
-		z-index: 1;
-		left: auto;
-
-
-		figure {
-			margin: 0;
-		}
-
-		// width: 1440
-		// height: 1024
-
-		// convert all of these to percentages!!
-
-		&.pedestal {
-			bottom: 3.1527778%;
-			right: 12.2222222%;
-			width: 14.4444444%;
-			height: 25.1%;
-			z-index: 2;
-		}
-
-		&.cowboy {
-			max-width: 141px;
-			width: 11.2918%;
-			height: 32.533281%;
-			right: 11.3527778%;
-			bottom: 5.859375%;
-		}
-
-		&.cowboy-thoughts {
-			max-width: 229px;
-			width: 15.956237%;
-			height: 17.541262%;
-			right: 18.3527778%;
-			bottom: 29%;
-		}
-
-		&.monkey {
-			width: 20.2638889%;
-			height: 33.5%;
-			right: 31.5416667%;
-			bottom: 5.7825%;
-		}
-
-		&.monkey-thoughts {
-			width: 11.1805556%;
-			height: 18.75%;
-			right: 37.9216667%;
-			bottom: 36.7625%;
-		}
-
-		&.barbie {
-			width: 26.7361111%;
-			height: 46.354688%;
-			right: 46.65%;
-			bottom: 5.75%;
-		}
-
-		&.barbie-thoughts {
-			width: 13.036111%;
-			height: 22.154688%;
-			// max-width: 382px;
-			// max-height: 470px;
-			right: 46.25%;
-			bottom: 51.75%;
-		}
-
-		&.troll {
-			width: 11.7361111%;
-			height: 40.8203125%;
-			right: 60.8333333%;
-			bottom: 4.35%;
-		}
-
-		&.troll-thoughts {
-			width: 10.9027778%;
-			height: 20.3125%;
-			right: 60.846875%;
-			bottom: 40.45%;
-		}
-
-		&.pirate {
-			width: 9.1666667%;
-			height: 20.0195312%;
-			right: 69.3055556%;
-			bottom: 3.3203125%;
-			z-index: 3;
-		}
-
-		&.giraffe {
-			width: 30%;
-			height: 69.921875%;
-			right: 63.8222222%;
-			bottom: 7.7%;
-		}
-
-		&.giraffe-thoughts {
-			width: 13.4722222%;
-			height: 20.8984375%;
-			right: 52.5222222%;
-			bottom: 71%;
-		}
-
-		&.dinosaur {
-			width: 86.1111111%;
-			height: 65.7226562%;
-			right: 72.3111111%;
-			bottom: 4.7%;
-		}
-
-		&.dinosaur-thoughts {
-			width: 16.5277778%;
-			height: 29.8828125%;
-			right: 79.5%;
-			bottom: 40.8%;
-		}
-	}
-}
 
 // Introduction
 #home-introduction {
@@ -223,6 +40,8 @@
 }
 
 #home-tracks {
+	padding: 8rem 0;
+
 	.container {
 		align-items: baseline;
 	}
@@ -242,14 +61,65 @@
 
 /* The Schedule Section */
 #home-schedule {
-	padding-top: 40px;
+	padding-top: 10rem;
+	position: relative;
+
+	/* Rock Em Sock Em */
+	.toy-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 0;
+		height: 0;
+
+		.toy {
+			position: absolute;
+			width: 30%;
+
+			figure {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		.team-mystic-robot {
+			top: 142px;
+			left: 0px;
+			max-width: 330px;
+
+			@include min-width(750px) {
+				left: -80px;
+			}
+		}
+
+		.team-valor-robot {
+			right: -20px;
+			top: 400px;
+			max-width: 416px;
+
+			@include min-width(750px) {
+				right: -160px;
+			}
+		}
+	}
 
 	/* Intro content */
 	.schedule-content {
-
 		margin-bottom: 40px;
+		z-index: 1;
+		position: relative;
+
+		h6 {
+			font-size: 3.2rem;
+			color: $magenta;
+		}
+
+		figure {
+			margin: 3.6rem auto 2rem auto;
+		}
 	}
-	
+
 	/* Schedule Table */
 	.schedule-table {
 		margin-bottom: 40px;
@@ -270,8 +140,8 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			
-			p { 
+
+			p {
 				font-size: 6rem; // eventually 10rem
 				line-height: 1; // for simplicity sake
 				margin-bottom: 10px;
@@ -280,9 +150,9 @@
 
 		/* Whaz goin' onnnn */
 		.timeslot-description {
-			flex: 0 0 100%;	
+			flex: 0 0 100%;
 
-			p { 
+			p {
 				margin-bottom: 0;
 			}
 		}
@@ -297,15 +167,15 @@
 			.timeslot {
 				flex: 0 0 33%;
 				border-right: 1px solid $orange;
-				
-				p { 
+
+				p {
 					font-size: 7.5rem; // eventually 10rem
 					margin-bottom: 0;
 				}
 			}
 
 			.timeslot-description {
-				flex: 0 0 67%;	
+				flex: 0 0 67%;
 				padding: 40px 0 40px 30px;
 			}
 		}
@@ -320,7 +190,7 @@
 		.blue-text {
 			.timeslot p, h6, .h6 { color: $blue; }
 		}
-	
+
 	.timeslot-7P {
 		.timeslot {
 			p {
