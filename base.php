@@ -115,7 +115,7 @@ if ( isset( $_SERVER['HTTP_X_PJAX'] ) ) :
 	<html class="no-js" <?php language_attributes(); ?>>
 	<head>
 		<?php $sendo->output('meta'); ?>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
 		<?php /* <link rel="prefetch" href="<?php echo get_template_directory_uri(); ?>/assets/img/location-cityscape-spacer.png" /> */ ?>
 		<?php
 		// Removes wordpress's title from the wp_head code.

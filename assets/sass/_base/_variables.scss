@@ -45,13 +45,14 @@
 	// Example:
 	// $custom-font: 'Custom Font Name', sans-serif;
 
-	$open-sans: "Open Sans", sans-serif;
+	$georgia: Georgia, Times, Times New Roman, serif;
+	$raleway: 'Raleway', sans-serif;;
 
 	// Replace the 'inherit' value with the proper font variables from directly above
-	$body-font: $open-sans;
-	$heading-font: $open-sans;
-	$button-font: $open-sans;
-	$nav-font: $open-sans;
+	$body-font: $georgia;
+	$heading-font: $raleway;
+	$button-font: $raleway;
+	$nav-font: $georgia;
 
 
 
