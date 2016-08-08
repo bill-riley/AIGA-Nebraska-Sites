@@ -2,14 +2,26 @@
 	background-color: $green;
 	padding: 12rem 0 24rem 0;
 
-	.container {
-		display: flex;
-		justify-content: flex-start;
+	.lead-in-content {
+		display: block;
+		margin-bottom: 6rem;
+
+		p {
+			color: $magenta;
+			font-size: 2.1rem;
+			font-family: $raleway;
+		}
+
+		figure {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
 	}
 
 	li, p, ul {
 		margin: 0;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		line-height: 1.33;
 	}
 
@@ -17,80 +29,108 @@
 		margin-left: 32px
 	}
 
-	.column {
-		position: relative;
-		flex: 0 0 33.3333333%;
+	.questions {
+		display: flex;
+		justify-content: flex-start;
 
-		&:nth-of-type(5n+1),
-		&:nth-of-type(5n+4) {
-			width: 280px;
-			height: 220px;
-			padding: 40px;
+		.column {
+			position: relative;
+			flex: 0 0 33.3333333%;
 
-			figure {
-				width: 160.7142857%;
-				transform: translate(-17.5%, -35%)
+			p:first-of-type {
+				margin-bottom: 0.6em;
+			}
+
+			&:nth-of-type(5n+1),
+			&:nth-of-type(5n+4) {
+				width: 280px;
+				height: 220px;
+				padding: 40px;
+
+				figure {
+					width: 160.7142857%;
+					transform: translate(-17.5%, -35%)
+				}
+			}
+
+			&:nth-of-type(5n+4) {
+				left: 8rem;
+			}
+
+			&:nth-of-type(5n+2) {
+				width: 195px;
+				margin-top: 4.2rem;
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				height: 390px;
+				padding: 70px 90px 10px 115px;
+
+				figure {
+					width: 238.4615385%;
+				}
+			}
+
+			&:nth-of-type(5n+3),
+			&:nth-of-type(5n+5) {
+				width: 270px;
+				height: 230px;
+				margin-top: -8rem;
+				padding: 90px 0px 10px 145px;
+
+
+				figure {
+					width: 166.6666667%;
+				}
+			}
+
+			&:nth-of-type(5n+5) {
+				margin-left: 33.33333%;
+				margin-bottom: 22rem;
+			}
+
+			&:nth-of-type(odd) {
+				p:first-of-type {
+					color: $magenta;
+				}
+			}
+
+			&:nth-of-type(even) {
+				p:first-of-type {
+					color: $green;
+				}
+
 			}
 		}
 
-		&:nth-of-type(5n+4) {
-			left: 8rem;
+		.parallax-thoughts {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
 		}
 
-		&:nth-of-type(5n+2) {
-			width: 195px;
-			margin-top: 4.2rem;
-			margin-bottom: 2rem;
-			height: 310px;
-			padding: 80px 90px 10px 105px;
+		.content {
+			position: relative;
+			z-index: 2;
 
-			figure {
-				width: 238.4615385%;
+			p:first-of-type {
+				font-color: $green;
+			}
+
+			p, ul, li {
+				color: $body-dark;
 			}
 		}
 
-		&:nth-of-type(5n+3),
-		&:nth-of-type(5n+5) {
-			width: 270px;
-			height: 230px;
-			margin-top: -8rem;
-			padding: 90px 0px 10px 105px;
-
-
-			figure {
-				width: 166.6666667%;
-			}
+		figure {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transform-origin: 50% 100%;
 		}
-
-		&:nth-of-type(5n+5) {
-			margin-left: 33.33333%;
-			margin-bottom: 22rem;
-		}
-	}
-
-	.parallax-thoughts {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	.content {
-		position: relative;
-		z-index: 2;
-
-		p:first-of-type {
-			font-color: $green;
-		}
-	}
-
-	figure {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		transform-origin: 50% 100%;
 	}
 }

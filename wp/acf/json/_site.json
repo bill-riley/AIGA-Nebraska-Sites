@@ -584,6 +584,24 @@
                 "endpoint": 0
             },
             {
+                "key": "field_57a8c563817a5",
+                "label": "Lead in content",
+                "name": "faqs_lead_in",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1
+            },
+            {
                 "key": "field_579e8c971e470",
                 "label": "FAQ's image 1",
                 "name": "faqs_image_1",

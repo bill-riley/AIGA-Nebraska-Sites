@@ -1,11 +1,10 @@
 <section <?php if (get_sub_field('section_name')): ?>id="<?php echo $post->post_name.'-'.sanitize_title(get_sub_field('section_name')); ?>"<?php endif; ?>>
 	<div class="container lead-in-content anim fadeInUp delay-200 justify-center">
 		<div class="column twelve center text-center">
-			<h4>FREQUENTLY ASKED</h4>
-			<h1>QUESTIONS</h1>
+			<?php the_field('faqs_lead_in'); ?>
 		</div>
 	</div>
-	<div class="container anim fadeInUp delay-200">
+	<div class="container anim fadeInUp delay-200 questions">
 
 		<?php $i = 1; ?>
 		<?php while( have_rows('faq_questions') ) : the_row(); ?>
