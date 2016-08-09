@@ -355,14 +355,14 @@
 
 			&.padding {
 				& > .column {
-					flex: 0 0 calc( 50% - #{$padding-base} );
+					flex: 0 0 calc( 50% - #{$padding-base / 1.25} );
 
 					@include min-width(801px) {
-						flex: 0 0 calc( 25% - #{$padding-base} );
+						flex: 0 0 calc( 25% - #{$padding-base / 1.25} );
 					}
 
 					@include min-width(1301px) {
-						flex: 0 0 calc( 12.5% - #{$padding-base} );
+						flex: 0 0 calc( 12.5% - #{$padding-base / 1.25} );
 					}
 				}
 

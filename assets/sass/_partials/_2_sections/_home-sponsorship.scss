@@ -1,15 +1,16 @@
 #home-sponsors-leadin {
-	padding: 8rem 0 0;
+	padding: 8rem 0;
 }
 
 #home-sponsors-platinum,
 #home-sponsors-gold,
 #home-sponsors-silver,
 #home-sponsors-bronze {
-	padding: 8rem 0 0;
+	padding: 0 0 3.4rem;
 
 	.container {
-		justify-content: space-around;
+		justify-content: space-between;
+		max-width: calc(100% - 6.8rem);
 	}
 
 	.column {
