@@ -1,5 +1,18 @@
 #home-sponsors-leadin {
 	padding: 8rem 0;
+	position: relative;
+
+	figure, p {
+		position: relative;
+		z-index: 1;
+	}
+
+	figure:nth-of-type(2) {
+		position: absolute;
+		left: -100px;
+		top: -120px;
+		z-index: 0;
+	}
 }
 
 #home-sponsors-platinum,
