@@ -10,6 +10,14 @@
 		z-index: 1;
 	}
 
+	p {
+		font-size: 3rem;
+		margin-bottom: -0.4em;
+		color: $yellow;
+		font-family: $raleway;
+		text-transform: uppercase;
+	}
+
 	figure:nth-of-type(2) {
 		position: absolute;
 		left: -600px;

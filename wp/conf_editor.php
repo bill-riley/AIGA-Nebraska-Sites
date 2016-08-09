@@ -207,7 +207,7 @@ function neighborhood_swap_all_image_tags($content) {
 		foreach($this_tags_classes as $a_class) {
 
 			if (strpos($a_class, 'wp-image-') === 0) {
-				preg_match_all('!\d+!', $a_class, $id);
+				preg_match_all('!\d+!', $a_class, 	$id);
 				$image_id = (int) $id[0][0];
 			}
 		}
