@@ -8,6 +8,9 @@
 				<h1>In partnership with</h1>
 				<p><a href="http://aiganebraska.org" target="_blank"><img class="logo-footer" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-aiga.png" alt="AIGA Nebraska logo"></a></p>
 				<hr />
+				<p class="flywheel-hosting">Hosted by <a href="http://getflywheel.com" target="_blank"><img class="flywheel" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg" onmouseover="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-motion.svg');" onmouseout="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg');" alt="Flywheel Hosting logo"></a></p>
+
+				<hr />
 				<p><strong>2015 BarCamp Omaha Supporters</strong></p>
 				<ul class="inline">
 					<li>
@@ -63,7 +66,7 @@
 		<div class="column">
 			<div class="content">
 				<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_octopi') . '"]'); ?>
-				<p>Hosted by <a href="http://getflywheel.com" target="_blank"><img class="flywheel" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg" onmouseover="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-motion.svg');" onmouseout="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg');" alt="Flywheel Hosting logo"></a></p>
+				<p>Design by <a href="http://fruitful-design.com" target="_blank"><img class="fruitful" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/barcamp/logo_fruitful@3x.png" alt="Fruitful Design logo"></a></p>
 			</div>
 		</div>
 	</div>
