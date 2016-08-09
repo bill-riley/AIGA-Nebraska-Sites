@@ -28,6 +28,7 @@
     "karma": "latest"
   },
   "dependencies": {
+    "browserify": "latest",
     "autoprefixer": "latest",
     "browser-sync": "latest",
     "cookies-js": "1.2.2",
