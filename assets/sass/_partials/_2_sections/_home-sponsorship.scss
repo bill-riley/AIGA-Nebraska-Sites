@@ -1,6 +1,9 @@
 #home-sponsors-leadin {
 	padding: 8rem 0;
-	position: relative;
+
+	.container {
+		position: relative;
+	}
 
 	figure, p {
 		position: relative;
@@ -9,8 +12,8 @@
 
 	figure:nth-of-type(2) {
 		position: absolute;
-		left: -100px;
-		top: -120px;
+		left: -600px;
+		top: -230px;
 		z-index: 0;
 	}
 }

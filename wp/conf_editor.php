@@ -197,7 +197,10 @@ function neighborhood_swap_all_image_tags($content) {
 		preg_match_all('/(height)=("[^"]*")/i', $image_tag[0], $this_tags_height);
 		preg_match_all('/(data-action)=("[^"]*")/i', $image_tag[0], $this_tags_zoom);
 
+
 		$this_tags_classes = substr($this_tags_classes[0][0], 7, -1);
+
+		$our_classes = $this_tags_classes;
 
 		$this_tags_classes = explode(' ', $this_tags_classes);
 
@@ -209,7 +212,7 @@ function neighborhood_swap_all_image_tags($content) {
 			}
 		}
 
-		$image_ids_in_order[$image_id] = array('string_to_replace' =>  $image_tag[0], 'width' => (int) substr($this_tags_width[2][0], 1, -1), 'height' => (int) substr($this_tags_height[2][0], 1, -1), 'zoom' => $this_tags_zoom[2][0]);
+		$image_ids_in_order[$image_id] = array('string_to_replace' =>  $image_tag[0], 'width' => (int) substr($this_tags_width[2][0], 1, -1), 'height' => (int) substr($this_tags_height[2][0], 1, -1), 'zoom' => $this_tags_zoom[2][0], 'classes' => $our_classes);
 	}
 
 	/* BEGIN caption logic */
@@ -237,10 +240,10 @@ function neighborhood_swap_all_image_tags($content) {
 	foreach($image_ids_in_order as $key => $image_details) {
 		$zoom_attr = ($image_details['zoom'] !== null) ? ' zoom="true"' : '';
 		if (!array_key_exists($key, $caption_ids)) {
-			$new_image = do_shortcode('[smart_image image_id="' . $key . '"' . $zoom_attr . ' width="'.$image_details["width"].'" height="'.$image_details["height"].'"][/smart_image]');
+			$new_image = do_shortcode('[smart_image image_id="' . $key . '"' . $zoom_attr . ' class="' . $image_details['classes'] . '" width="'.$image_details["width"].'" height="'.$image_details["height"].'"][/smart_image]');
 			$content = str_replace($image_details["string_to_replace"], $new_image, $content);
 		} else {
-			$new_image = do_shortcode('[smart_image image_id="' . $key . '"' . $zoom_attr . ' width="'.$image_details["width"].'" height="'.$image_details["height"].'"]' . $caption_ids[$key]["caption"] . '[/smart_image]');
+			$new_image = do_shortcode('[smart_image image_id="' . $key . '"' . $zoom_attr . ' class="' . $image_details['classes'] . '" width="'.$image_details["width"].'" height="'.$image_details["height"].'"]' . $caption_ids[$key]["caption"] . '[/smart_image]');
 			$content = str_replace($caption_ids[$key]["string_to_replace"], $new_image, $content);
 		}
 	}

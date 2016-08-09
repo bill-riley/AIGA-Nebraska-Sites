@@ -1,6 +1,6 @@
 #home-faqs {
 	background-color: $green;
-	padding: 12rem 0 24rem 0;
+	padding: 12rem 0 4rem 0;
 
 	.lead-in-content {
 		display: block;
@@ -10,6 +10,7 @@
 			color: $magenta;
 			font-size: 2.1rem;
 			font-family: $raleway;
+			margin-bottom: 1em;
 		}
 
 		figure {
@@ -39,6 +40,7 @@
 
 			p:first-of-type {
 				margin-bottom: 0.6em;
+				font-family: $raleway;
 			}
 
 			&:nth-of-type(5n+1),
