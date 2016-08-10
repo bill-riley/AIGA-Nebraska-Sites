@@ -165,6 +165,10 @@
 
 			&:first-of-type { padding-left: 0; }
 			&:last-of-type  { padding-right: 0; }
+
+			&.clean {
+				padding: 0;
+			}
 		}
 
 		&.reset,
@@ -273,4 +277,5 @@
 		height: 1px;
 		background: $gray-light;
 		border: none;
+		width: 90%;
 	}

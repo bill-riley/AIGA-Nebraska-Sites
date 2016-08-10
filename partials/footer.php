@@ -1,15 +1,72 @@
 <footer class="content-info">
 	<div class="container bleed built-by-friends">
+		<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_shark') . '"]'); ?>
+		<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_whale') . '"]'); ?>
+
 		<div class="column">
-			<div class="content">
-				<p>Designed and built by your friends at <a href="http://aiganebraska.org" target="_blank"><img class="logo-footer" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-aiga-black.png" alt="AIGA Nebraska logo"></a></p>
+			<div class="content text-center">
+				<h1>In partnership with</h1>
+				<p><a href="http://aiganebraska.org" target="_blank"><img class="logo-footer" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-aiga.png" alt="AIGA Nebraska logo"></a></p>
+				<hr />
+				<p class="flywheel-hosting">Hosted by <a href="http://getflywheel.com" target="_blank"><img class="flywheel" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg" onmouseover="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-motion.svg');" onmouseout="this.setAttribute('src', '<?php echo get_template_directory_uri(); ?>/assets_compiled/images/logo-white-static.svg');" alt="Flywheel Hosting logo"></a></p>
+
+				<hr />
+				<p><strong>2015 BarCamp Omaha Supporters</strong></p>
+				<ul class="inline">
+					<li>
+						<a href="#">Fruitful</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">Flywheel</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">Hello Holiday</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">Grain &amp; Mortar</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">AIGA Nebraska Board of Directors</a>
+					</li>
+				</ul>
+				<p><strong>BarCamp Omaha</strong></p>
+				<ul class="inline">
+					<li>
+						<a href="#">2015</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">2014</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">2013</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">2012</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">2011</a>
+					</li>
+					<li class="clean">&#8226;</li>
+					<li>
+						<a href="#">1984</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="container bleed hosted-flywheel">
+	<div class="container bleed design-and-hosting">
 		<div class="column">
 			<div class="content">
-				<p>Hosted by <a href="http://getflywheel.com" target="_blank"><img class="flywheel" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/flywheel-logo.svg" alt="Flywheel Hosting logo"></a></p>
+				<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_octopi') . '"]'); ?>
+				<p>Design by <a href="http://fruitful-design.com" target="_blank"><img class="fruitful" src="<?php echo get_template_directory_uri(); ?>/assets_compiled/images/barcamp/logo_fruitful@3x.png" alt="Fruitful Design logo"></a></p>
 			</div>
 		</div>
 	</div>

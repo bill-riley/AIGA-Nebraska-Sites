@@ -1,5 +1,29 @@
 #home-sponsors-leadin {
 	padding: 8rem 0;
+
+	.container {
+		position: relative;
+	}
+
+	figure, p {
+		position: relative;
+		z-index: 1;
+	}
+
+	p {
+		font-size: 3rem;
+		margin-bottom: -0.4em;
+		color: $yellow;
+		font-family: $raleway;
+		text-transform: uppercase;
+	}
+
+	figure:nth-of-type(2) {
+		position: absolute;
+		left: -600px;
+		top: -230px;
+		z-index: 0;
+	}
 }
 
 #home-sponsors-platinum,
