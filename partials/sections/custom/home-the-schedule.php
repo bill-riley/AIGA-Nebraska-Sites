@@ -1,3 +1,27 @@
+<section id="home-schedule-friday" class="anim fadeIn">
+	<div class="container schedule-content friday-content">
+		<div class="column">
+			<?php the_field('friday_schedule_content'); ?>		
+		</div>
+	</div>
+
+	<div class="container schedule-table friday-schedule">
+		<?php if( have_rows('friday_schedule') ): ?>
+			<?php while( have_rows('friday_schedule') ): the_row(); ?>
+				<div class="column <?php if( get_sub_field('am_or_pm') == "am" ): ?>green<?php else: ?>blue<?php endif; ?>-text timeslot-<?php the_sub_field('timeslot'); ?><?php if( get_sub_field('am_or_pm') == "am" ): ?>A<?php else: ?>P<?php endif; ?>">
+					<div class="timeslot">
+						<p><?php the_sub_field('timeslot'); ?><?php if( get_sub_field('am_or_pm') == "am" ): ?>A<?php else: ?>P<?php endif; ?></p>
+					</div>
+					<div class="timeslot-description">
+						<?php the_sub_field('timeslot_description'); ?>
+					</div>
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
+</section>
+
+
 <section id="home-schedule" class="anim fadeIn">
 	<div class="container toy-container">
 		<div class="toy team-mystic-robot scroll-parallax" data-parallax-dampening="15" data-parallax-type="abs" data-parallax-dir="reverse">

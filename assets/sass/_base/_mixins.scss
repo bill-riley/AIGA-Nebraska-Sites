@@ -70,11 +70,13 @@
 	}
 
 	@mixin h5() {
-		font: normal 400 2.1rem $nav_font;
+		font: normal 400 3.2rem $raleway;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
 		margin: 0 0 10px 0;
-		color: $body_dark;
+		color: white;
+		background: $orange;
+		text-align: center;
 	}
 
 	@mixin h6() {
