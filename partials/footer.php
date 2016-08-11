@@ -1,7 +1,7 @@
 <footer class="content-info">
 	<div class="container bleed built-by-friends">
-		<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_shark') . '"]'); ?>
-		<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_whale') . '"]'); ?>
+		<div class="scroll-parallax whale" data-parallax-dampening="15" data-parallax-type="abs" data-parallax-dir="reverse"><?php echo do_shortcode('[smart_image image_id="' . get_field('footer_whale') . '" class="parallax-background"]'); ?></div>
+		<div class="scroll-parallax shark" data-parallax-dampening="15" data-parallax-type="abs" data-parallax-dir="reverse"><?php echo do_shortcode('[smart_image image_id="' . get_field('footer_shark') . '" class="parallax-background"]'); ?></div>
 
 		<div class="column">
 			<div class="content text-center">
@@ -62,6 +62,7 @@
 			</div>
 		</div>
 	</div>
+	<?php echo do_shortcode('[smart_image image_id="' . get_field('footer_ocean_floor') . '" class="ocean-floor parallax-background"]'); ?>
 	<div class="container bleed design-and-hosting">
 		<div class="column">
 			<div class="content">

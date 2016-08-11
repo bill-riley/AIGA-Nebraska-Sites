@@ -1,7 +1,7 @@
 <section id="home-schedule-friday" class="anim fadeIn">
 	<div class="container schedule-content friday-content">
 		<div class="column">
-			<?php the_field('friday_schedule_content'); ?>		
+			<?php the_field('friday_schedule_content'); ?>
 		</div>
 	</div>
 

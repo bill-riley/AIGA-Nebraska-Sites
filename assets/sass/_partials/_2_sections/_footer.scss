@@ -4,12 +4,41 @@
 	footer {
 		background: $blue;
 		width: 100%;
+		padding-top: 12rem;
+		position: relative;
 
 		h1 {
 			font-size: 3.4rem;
 			text-transform: capitalize;
 			font-family: $georgia;
 			font-style: italic;
+		}
+
+		.whale,
+		.shark {
+			position: absolute;
+			width: 100%;
+
+			figure {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		.whale {
+			right: -1rem;
+			bottom: -4rem;
+			max-width: 590px;
+		}
+
+		.shark {
+			left: 0;
+			bottom: -22%;
+			max-width: 510px;
+		}
+
+		.ocean-floor {
+			margin: 0 auto -2.6rem auto;
 		}
 
 		.content {
